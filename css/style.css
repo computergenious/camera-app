@@ -21,6 +21,7 @@ body{
 #camera-output{
     transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
+    transform: scaleY(-1);
     /* filter: FlipH; */
 }
 
