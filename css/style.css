@@ -1,4 +1,5 @@
-html, body{
+html, 
+body{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -19,7 +20,8 @@ html, body{
 #camera-sensor,
 #camera-output{
     transform: scaleX(-1);
-    filter: FlipH;
+    -webkit-transform: scaleX(-1);
+    /* filter: FlipH; */
 }
 
 #camera-trigger{
