@@ -10,6 +10,7 @@ const cameraView = document.querySelector("#camera-view"),
 
 // Access the device camera and stream to cameraView
 function cameraStart(){
+
     navigator.mediaDevices
              .getUserMedia(constraints)
              .then(function(stream){
@@ -17,6 +18,9 @@ function cameraStart(){
                  cameraView.srcObject = stream;
     })
     .catch(function(error){ console.log("ERROR: ", error); });
+
+    cameraSensor.translate(cameraSensor.width,0);
+    cameraSensor.scale(-1,1);
 }
 
 // Take a picture when cameraTrigger is tapped
