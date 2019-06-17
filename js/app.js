@@ -18,9 +18,6 @@ function cameraStart(){
                  cameraView.srcObject = stream;
     })
     .catch(function(error){ console.log("ERROR: ", error); });
-
-    cameraSensor.translate(cameraSensor.width,0);
-    cameraSensor.scale(-1,1);
 }
 
 // Take a picture when cameraTrigger is tapped
