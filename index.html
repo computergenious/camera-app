@@ -39,7 +39,12 @@
     <a href="javascript:void(take_snapshot())">Take Snapshot</a>
 
     <script>   
-            Webcam.set('flip_horiz', true);   
+            Webcam.set( {
+                width: 320,
+                height: 240,
+                flip_horiz: true,
+                image_format: 'png'
+            });     
             Webcam.attach( '#my_camera' );
 
             function take_snapshot(){
