@@ -39,12 +39,25 @@
     <a href="javascript:void(take_snapshot())">Take Snapshot</a>
 
     <script>   
+    var cameras = new Array(); //create empty array to later insert available devices
+    navigator.mediaDevices.enumerateDevices() // get the available devices found in the machine
+             .then(function(devices) {
+                devices.forEach(function(device) {
+                    var i = 0;
+                    if(device.kind=== "videoinput"){ //filter video devices only
+                        cameras[i]= device.deviceId; // save the camera id's in the camera array
+                        i++;
+                    }
+                });
+            })
+            
             Webcam.set( {
                 width: 320,
                 height: 240,
                 flip_horiz: true,
-                image_format: 'png'
-            });     
+                image_format: 'png',
+                sourceId: cameras[1]
+            });    
             Webcam.attach( '#my_camera' );
 
             function take_snapshot(){
